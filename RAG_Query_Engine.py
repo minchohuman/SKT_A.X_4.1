@@ -1,11 +1,9 @@
-from langchain.document_loaders import DirectoryLoader
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.llms import OpenAI
 from langchain.chains import RetrievalQA
+from langchain_community.document_loaders import DirectoryLoader
 
-
-# 로컬 문서 폴더의 .txt, .pdf 등을 로드
 loader = DirectoryLoader("docs/", glob="**/*.txt")
 docs = loader.load()
 
