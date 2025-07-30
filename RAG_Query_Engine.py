@@ -31,3 +31,21 @@ result = qa_chain({"query": query})
 
 print("답변:", result["result"])
 print("참조 문서:", [doc.metadata["source"] for doc in result["source_documents"]])
+
+'''
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://guest-api.sktax.chat/v1",
+    api_key="sktax-XyeKFrq67ZjS4EpsDlrHHXV8it"
+)
+
+completion = client.chat.completions.create(
+    model="ax4",
+    messages=[
+        {"role": "user", "content": "여름철 에어컨 적정 온도는? 한줄로 대답해."}
+    ]
+)
+
+print(completion)
+'''
